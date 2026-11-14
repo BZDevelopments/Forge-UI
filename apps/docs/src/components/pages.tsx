@@ -3,6 +3,7 @@ import { GITHUB_URL, ORG_URL } from "../docs/pages";
 import { Link } from "../lib/router";
 import { CodeBlock } from "./code-block";
 import { Markdown } from "./markdown";
+import { ThemePreview } from "./theme-preview";
 
 function PageTitle({ children }: { children: string }) {
   return (
@@ -69,6 +70,12 @@ export function Home() {
         >
           View on GitHub
         </a>
+        <Link
+          to="/guides/theming"
+          className="rounded-md border border-forge-border px-4 py-2 text-sm font-semibold hover:bg-forge-hover"
+        >
+          Preview themes
+        </Link>
       </div>
 
       <h2 className="mt-14 text-2xl font-semibold">Components</h2>
@@ -256,6 +263,13 @@ export function Theming() {
   --forge-radius: 0.75rem;
 }`}
       />
+
+      <h2 className="mt-10 text-2xl font-semibold">Try a theme</h2>
+      <p className="mt-2">
+        Switch the palette to see the same component with different accent colors and corner radii.
+        These overrides are scoped to the preview.
+      </p>
+      <ThemePreview />
 
       <h2 className="mt-10 text-2xl font-semibold">Dark mode</h2>
       <p className="mt-2">

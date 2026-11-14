@@ -31,6 +31,48 @@
 html {
   scroll-padding-top: 5rem;
 }
+.docs-theme-preview[data-palette="indigo"] {
+  --forge-accent: #4f46e5;
+  --forge-accent-hover: #4338ca;
+  --forge-accent-soft: #eef2ff;
+  --forge-accent-text: #ffffff;
+  --forge-focus-ring: #6366f1;
+  --forge-radius: 0.5rem;
+  --forge-radius-sm: 0.375rem;
+}
+.docs-theme-preview[data-palette="teal"] {
+  --forge-accent: #0f766e;
+  --forge-accent-hover: #115e59;
+  --forge-accent-soft: #f0fdfa;
+  --forge-accent-text: #ffffff;
+  --forge-focus-ring: #0f766e;
+  --forge-radius: 0.875rem;
+  --forge-radius-sm: 0.625rem;
+}
+.docs-theme-preview[data-palette="rose"] {
+  --forge-accent: #be123c;
+  --forge-accent-hover: #9f1239;
+  --forge-accent-soft: #fff1f2;
+  --forge-accent-text: #ffffff;
+  --forge-focus-ring: #be123c;
+  --forge-radius: 0.25rem;
+  --forge-radius-sm: 0.125rem;
+}
+.dark .docs-theme-preview[data-palette="indigo"] {
+  --forge-accent-soft: #1e1b4b;
+  --forge-accent-text: #ffffff;
+  --forge-focus-ring: #a5b4fc;
+}
+.dark .docs-theme-preview[data-palette="teal"] {
+  --forge-accent-soft: #134e4a;
+  --forge-accent-text: #ffffff;
+  --forge-focus-ring: #5eead4;
+}
+.dark .docs-theme-preview[data-palette="rose"] {
+  --forge-accent-soft: #4c0519;
+  --forge-accent-text: #ffffff;
+  --forge-focus-ring: #fda4af;
+}
 body {
   margin: 0;
   background: var(--forge-bg);
