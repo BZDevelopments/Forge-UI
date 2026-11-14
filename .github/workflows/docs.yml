@@ -3,7 +3,7 @@ name: Deploy docs
 on:
   push:
     branches: [main]
-    paths: [apps/docs/**, packages/**, CHANGELOG.md, CONTRIBUTING.md]
+    paths: [.github/workflows/docs.yml, apps/docs/**, packages/**, CHANGELOG.md, CONTRIBUTING.md]
   workflow_dispatch:
 
 permissions:
@@ -31,7 +31,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm build:docs
         env:
-          DOCS_BASE: /forge-ui/
+          DOCS_BASE: /Forge-UI/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
