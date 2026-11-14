@@ -1,0 +1,66 @@
+{
+  "name": "@forge-ui/command-palette",
+  "version": "0.1.0",
+  "description": "Accessible command palette with fuzzy search, nested commands, async results, and recent history.",
+  "keywords": [
+    "forge-ui",
+    "react",
+    "accessible",
+    "typescript",
+    "command-palette",
+    "cmdk",
+    "spotlight",
+    "fuzzy-search"
+  ],
+  "license": "MIT",
+  "author": "BZDevelopments (https://github.com/bzdevelopments)",
+  "homepage": "https://github.com/bzdevelopments/forge-ui/tree/main/packages/command-palette#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bzdevelopments/forge-ui.git",
+    "directory": "packages/command-palette"
+  },
+  "bugs": {
+    "url": "https://github.com/bzdevelopments/forge-ui/issues"
+  },
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./styles.css": "./dist/styles.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup && node ../../scripts/copy-css.mjs",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.2",
+    "@forge-ui/core": "workspace:^"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  }
+}

@@ -1,0 +1,61 @@
+.forge-ms {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  min-height: 2.25rem;
+  height: auto;
+  padding: 0.25rem 2.25rem 0.25rem 0.5rem;
+  cursor: text;
+  font-family: var(--forge-font);
+}
+.forge-ms:focus-within {
+  outline: 2px solid var(--forge-focus-ring);
+  outline-offset: 1px;
+}
+.forge-ms[data-disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.forge-ms-tags {
+  display: contents;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.forge-ms-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  max-width: 100%;
+  padding: 0.0625rem 0.25rem 0.0625rem 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--forge-text);
+  background: var(--forge-accent-soft);
+  border: 1px solid var(--forge-border);
+  border-radius: 9999px;
+}
+.forge-ms-tag > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.forge-ms-more {
+  padding-right: 0.5rem;
+  color: var(--forge-text-muted);
+}
+.forge-ms-input {
+  all: unset;
+  flex: 1 1 6rem;
+  min-width: 4rem;
+  padding: 0.25rem 0;
+  font-size: 0.875rem;
+  color: var(--forge-text);
+}
+.forge-ms-input::placeholder {
+  color: var(--forge-text-muted);
+}
+.forge-ms-input:focus-visible {
+  outline: none;
+}

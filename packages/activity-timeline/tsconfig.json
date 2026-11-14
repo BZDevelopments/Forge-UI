@@ -1,0 +1,21 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@forge-ui/core": ["../core/src/index.ts"],
+      "@forge-ui/data-table": ["../data-table/src/index.ts"],
+      "@forge-ui/command-palette": ["../command-palette/src/index.ts"],
+      "@forge-ui/file-uploader": ["../file-uploader/src/index.ts"],
+      "@forge-ui/form": ["../form/src/index.ts"],
+      "@forge-ui/combobox": ["../combobox/src/index.ts"],
+      "@forge-ui/multi-select": ["../multi-select/src/index.ts"],
+      "@forge-ui/date-range-picker": ["../date-range-picker/src/index.ts"],
+      "@forge-ui/notifications": ["../notifications/src/index.ts"],
+      "@forge-ui/activity-timeline": ["../activity-timeline/src/index.ts"],
+      "@forge-ui/kanban-board": ["../kanban-board/src/index.ts"]
+    }
+  },
+  "include": ["src"]
+}

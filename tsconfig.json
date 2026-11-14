@@ -1,0 +1,31 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "baseUrl": ".",
+    "types": ["vite/client", "vitest/globals", "@testing-library/jest-dom", "node"],
+    "paths": {
+      "@forge-ui/core": ["packages/core/src/index.ts"],
+      "@forge-ui/data-table": ["packages/data-table/src/index.ts"],
+      "@forge-ui/command-palette": ["packages/command-palette/src/index.ts"],
+      "@forge-ui/file-uploader": ["packages/file-uploader/src/index.ts"],
+      "@forge-ui/form": ["packages/form/src/index.ts"],
+      "@forge-ui/combobox": ["packages/combobox/src/index.ts"],
+      "@forge-ui/multi-select": ["packages/multi-select/src/index.ts"],
+      "@forge-ui/date-range-picker": ["packages/date-range-picker/src/index.ts"],
+      "@forge-ui/notifications": ["packages/notifications/src/index.ts"],
+      "@forge-ui/activity-timeline": ["packages/activity-timeline/src/index.ts"],
+      "@forge-ui/kanban-board": ["packages/kanban-board/src/index.ts"]
+    }
+  },
+  "include": [
+    "packages/*/src",
+    "packages/*/tests",
+    "apps/docs/src",
+    "tests",
+    "vitest.config.ts",
+    "vitest.setup.ts",
+    "forge-test-types.d.ts"
+  ],
+  "exclude": ["**/dist", "**/node_modules"]
+}

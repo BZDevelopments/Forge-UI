@@ -1,0 +1,9 @@
+dist
+node_modules
+pnpm-lock.yaml
+CHANGELOG.md
+.changeset
+coverage
+playwright-report
+test-results
+*.min.*

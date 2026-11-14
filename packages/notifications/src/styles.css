@@ -1,0 +1,188 @@
+.forge-toaster {
+  position: fixed;
+  z-index: var(--forge-z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: min(24rem, calc(100vw - 1.5rem));
+  padding: 0.75rem;
+  pointer-events: none;
+  font-family: var(--forge-font);
+}
+.forge-toaster:focus-visible {
+  outline: none;
+}
+.forge-toaster[data-position^="top"] {
+  top: 0;
+}
+.forge-toaster[data-position^="bottom"] {
+  bottom: 0;
+  flex-direction: column-reverse;
+}
+.forge-toaster[data-position$="left"] {
+  left: 0;
+}
+.forge-toaster[data-position$="right"] {
+  right: 0;
+}
+.forge-toaster[data-position$="center"] {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.forge-toast-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.forge-toaster[data-position^="bottom"] .forge-toast-list {
+  flex-direction: column-reverse;
+}
+.forge-toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 0.875rem;
+  color: var(--forge-text);
+  background: var(--forge-surface);
+  border: 1px solid var(--forge-border);
+  border-left-width: 4px;
+  border-radius: var(--forge-radius);
+  box-shadow: var(--forge-shadow);
+  font-size: 0.875rem;
+  animation: forge-toast-in 0.18s ease-out;
+}
+.forge-toast[data-variant="success"] {
+  border-left-color: var(--forge-success);
+}
+.forge-toast[data-variant="error"] {
+  border-left-color: var(--forge-danger);
+}
+.forge-toast[data-variant="warning"] {
+  border-left-color: var(--forge-warning);
+}
+.forge-toast[data-variant="info"],
+.forge-toast[data-variant="loading"] {
+  border-left-color: var(--forge-info);
+}
+.forge-toast-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.0625rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  color: var(--forge-accent-text);
+  background: var(--forge-text-muted);
+}
+.forge-toast[data-variant="default"] .forge-toast-icon {
+  display: none;
+}
+.forge-toast[data-variant="success"] .forge-toast-icon {
+  background: var(--forge-success);
+}
+.forge-toast[data-variant="error"] .forge-toast-icon {
+  background: var(--forge-danger);
+}
+.forge-toast[data-variant="warning"] .forge-toast-icon {
+  background: var(--forge-warning);
+}
+.forge-toast[data-variant="info"] .forge-toast-icon {
+  background: var(--forge-info);
+}
+.forge-toast[data-variant="loading"] .forge-toast-icon {
+  background: transparent;
+  color: var(--forge-info);
+}
+.forge-toast-body {
+  flex: 1;
+  min-width: 0;
+}
+.forge-toast-title {
+  font-weight: 600;
+}
+.forge-toast-desc {
+  margin-top: 0.125rem;
+  color: var(--forge-text-muted);
+}
+.forge-toast-progress {
+  margin-top: 0.5rem;
+  height: 0.25rem;
+  overflow: hidden;
+  border-radius: 9999px;
+  background: var(--forge-border);
+}
+.forge-toast-progress > div {
+  height: 100%;
+  background: var(--forge-accent);
+  transition: width 0.15s linear;
+}
+.forge-toast-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.forge-toast-button {
+  all: unset;
+  cursor: pointer;
+  padding: 0.125rem 0.5rem;
+  font-weight: 600;
+  color: var(--forge-accent);
+  border-radius: var(--forge-radius-sm);
+}
+.forge-toast-button:hover {
+  background: var(--forge-accent-soft);
+}
+.forge-toast-button:focus-visible,
+.forge-toast-close:focus-visible {
+  outline: 2px solid var(--forge-focus-ring);
+  outline-offset: 1px;
+}
+.forge-toast-close {
+  all: unset;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1.125rem;
+  line-height: 1;
+  color: var(--forge-text-muted);
+  border-radius: var(--forge-radius-sm);
+}
+.forge-toast-close:hover {
+  background: var(--forge-surface-hover);
+  color: var(--forge-text);
+}
+.forge-toast-queued {
+  pointer-events: auto;
+  margin: 0;
+  align-self: center;
+  padding: 0.125rem 0.625rem;
+  font-size: 0.75rem;
+  color: var(--forge-text-muted);
+  background: var(--forge-surface);
+  border: 1px solid var(--forge-border);
+  border-radius: 9999px;
+}
+
+@keyframes forge-toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+}
+@media (max-width: 520px) {
+  .forge-toaster {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100%;
+    transform: none !important;
+  }
+}

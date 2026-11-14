@@ -1,0 +1,249 @@
+.forge-kb {
+  font-family: var(--forge-font);
+  font-size: 0.875rem;
+  color: var(--forge-text);
+  min-width: 0;
+}
+.forge-kb-board {
+  /* Visually hidden text inside is absolutely positioned. Making the board its containing block keeps it
+     clipped by the scroller, so it cannot widen the page. */
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scroll-snap-type: x proximity;
+}
+.forge-kb-column {
+  flex: 0 0 18rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  scroll-snap-align: start;
+  background: var(--forge-surface-muted);
+  border: 1px solid var(--forge-border);
+  border-radius: var(--forge-radius);
+}
+.forge-kb-column[data-over] {
+  border-color: var(--forge-accent);
+}
+/* A full column is flagged with a border and weight, not a text color, which would fail contrast. */
+.forge-kb-column[data-full] .forge-kb-count {
+  color: var(--forge-text);
+  font-weight: 700;
+  border-color: var(--forge-warning);
+  border-width: 2px;
+}
+.forge-kb-column-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.25rem 0.25rem 0;
+}
+.forge-kb-column-title {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.forge-kb-count {
+  padding: 0 0.5rem;
+  font-size: 0.75rem;
+  color: var(--forge-text-muted);
+  border: 1px solid var(--forge-border);
+  border-radius: 9999px;
+}
+.forge-kb-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 2.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.forge-kb-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.375rem;
+  padding: 0.5rem;
+  background: var(--forge-surface);
+  border: 1px solid var(--forge-border);
+  border-radius: var(--forge-radius-sm);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.06);
+}
+.forge-kb-card:focus-visible {
+  outline: 2px solid var(--forge-focus-ring);
+  outline-offset: 1px;
+}
+.forge-kb-card[data-dragging] {
+  opacity: 0.55;
+}
+.forge-kb-overlay .forge-kb-card {
+  opacity: 1;
+  box-shadow: var(--forge-shadow);
+}
+.forge-kb-handle,
+.forge-kb-icon-button {
+  all: unset;
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  color: var(--forge-text-muted);
+  border-radius: var(--forge-radius-sm);
+  cursor: grab;
+  touch-action: none;
+}
+.forge-kb-icon-button {
+  cursor: pointer;
+  touch-action: auto;
+}
+.forge-kb-handle:hover,
+.forge-kb-icon-button:hover {
+  background: var(--forge-surface-hover);
+  color: var(--forge-text);
+}
+.forge-kb-handle:focus-visible,
+.forge-kb-icon-button:focus-visible,
+.forge-kb-add:focus-visible,
+.forge-kb-menu-item:focus-visible {
+  outline: 2px solid var(--forge-focus-ring);
+  outline-offset: 1px;
+}
+.forge-kb-card-body {
+  flex: 1;
+  min-width: 0;
+}
+.forge-kb-card-title {
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.forge-kb-card-desc {
+  margin-top: 0.25rem;
+  font-size: 0.8125rem;
+  color: var(--forge-text-muted);
+  overflow-wrap: anywhere;
+}
+.forge-kb-labels,
+.forge-kb-assignees {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.forge-kb-label {
+  --forge-kb-label: var(--forge-accent);
+  padding: 0 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--forge-text);
+  background: color-mix(in srgb, var(--forge-kb-label) 20%, var(--forge-surface));
+  border: 1px solid color-mix(in srgb, var(--forge-kb-label) 55%, transparent);
+  border-radius: 9999px;
+}
+.forge-kb-avatar {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: var(--forge-text-muted);
+  background: var(--forge-surface-hover);
+  border-radius: 9999px;
+}
+.forge-kb-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.forge-kb-empty {
+  padding: 1rem 0.5rem;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--forge-text-muted);
+  border: 1px dashed var(--forge-border-strong);
+  border-radius: var(--forge-radius-sm);
+}
+.forge-kb-empty-board {
+  padding: 2rem;
+  text-align: center;
+  color: var(--forge-text-muted);
+}
+.forge-kb-add {
+  all: unset;
+  cursor: pointer;
+  padding: 0.375rem 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--forge-text-muted);
+  border-radius: var(--forge-radius-sm);
+}
+.forge-kb-add:hover {
+  background: var(--forge-surface-hover);
+  color: var(--forge-text);
+}
+.forge-kb-menu {
+  position: relative;
+  flex: none;
+}
+.forge-kb-menu-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.25rem);
+  min-width: 11rem;
+  padding: 0.25rem;
+  display: flex;
+  flex-direction: column;
+}
+.forge-kb-menu-item {
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 0.375rem 0.5rem;
+  border-radius: var(--forge-radius-sm);
+}
+.forge-kb-menu-item:hover,
+.forge-kb-menu-item:focus-visible {
+  background: var(--forge-surface-hover);
+}
+.forge-kb-menu-item[data-danger] {
+  color: var(--forge-danger);
+}
+@keyframes forge-kb-pulse {
+  50% {
+    opacity: 0.45;
+  }
+}
+.forge-kb-skeleton {
+  display: block;
+  height: 0.75rem;
+  border-radius: 9999px;
+  background: var(--forge-border);
+  animation: forge-kb-pulse 1.4s ease-in-out infinite;
+}
+.forge-kb-skeleton-card {
+  height: 3.5rem;
+  border-radius: var(--forge-radius-sm);
+}
+
+@media (max-width: 640px) {
+  .forge-kb-column {
+    flex-basis: 85vw;
+  }
+  .forge-kb-board {
+    scroll-snap-type: x mandatory;
+  }
+  .forge-kb-handle,
+  .forge-kb-icon-button {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
