@@ -1,6 +1,6 @@
 {
   "name": "@forge-ui/kanban-board",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Kanban board with pointer and keyboard drag and drop, card actions, and persistence callbacks.",
   "keywords": [
     "forge-ui",

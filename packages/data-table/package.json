@@ -1,6 +1,6 @@
 {
   "name": "@forge-ui/data-table",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Sortable, filterable, virtualized data table with server-side data, pinning, and keyboard navigation.",
   "keywords": [
     "forge-ui",

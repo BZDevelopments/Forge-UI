@@ -1,6 +1,6 @@
 {
   "name": "@forge-ui/activity-timeline",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Activity timeline with grouped events, avatars, metadata, and custom event rendering.",
   "keywords": [
     "forge-ui",

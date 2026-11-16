@@ -1,7 +1,7 @@
 {
   "name": "@forge-ui/example-admin-dashboard",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "description": "A small admin dashboard built with Forge UI. It uses the published package entry points, with no Tailwind.",
   "scripts": {

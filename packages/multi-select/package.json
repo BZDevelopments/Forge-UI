@@ -1,6 +1,6 @@
 {
   "name": "@forge-ui/multi-select",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Multi-select built on the Forge UI combobox with removable tags, grouping, and async options.",
   "keywords": [
     "forge-ui",

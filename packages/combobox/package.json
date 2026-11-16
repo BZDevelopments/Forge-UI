@@ -1,6 +1,6 @@
 {
   "name": "@forge-ui/combobox",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Accessible combobox with async options, grouping, custom rendering, and virtualized large lists.",
   "keywords": [
     "forge-ui",

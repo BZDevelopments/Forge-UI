@@ -1,6 +1,6 @@
 {
   "name": "@forge-ui/form",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Schema-driven form system with multi-step flows, conditional fields, field arrays, and async validation.",
   "keywords": [
     "forge-ui",

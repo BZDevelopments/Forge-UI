@@ -1,6 +1,6 @@
 {
   "name": "@forge-ui/date-range-picker",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Date and date-range picker with constraints, keyboard navigation, and locale-aware formatting.",
   "keywords": [
     "forge-ui",

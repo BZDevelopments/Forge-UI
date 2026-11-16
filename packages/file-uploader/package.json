@@ -1,6 +1,6 @@
 {
   "name": "@forge-ui/file-uploader",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Adapter-based file uploader with validation, previews, progress, retry, cancel, and pause/resume.",
   "keywords": [
     "forge-ui",
