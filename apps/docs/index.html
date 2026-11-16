@@ -16,7 +16,12 @@
       try {
         var saved = localStorage.getItem("forge-docs-theme");
         var dark = saved ? saved === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
-        if (dark) document.documentElement.classList.add("dark");
+        if (saved) {
+          document.documentElement.classList.toggle("dark", dark);
+          document.documentElement.classList.toggle("light", !dark);
+        } else if (dark) {
+          document.documentElement.classList.add("dark");
+        }
       } catch (e) {}
     </script>
   </head>

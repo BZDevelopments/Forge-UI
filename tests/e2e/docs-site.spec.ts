@@ -54,6 +54,26 @@ test.describe("documentation site", () => {
     await expect(html).toHaveClass(/dark/);
   });
 
+  test("light mode can override a dark system preference", async ({ page }) => {
+    await page.emulateMedia({ colorScheme: "dark" });
+    await page.goto("/");
+    const html = page.locator("html");
+    await expect(html).toHaveClass(/dark/);
+
+    await page.getByRole("button", { name: "Dark mode" }).click();
+    await expect(html).toHaveClass(/light/);
+    await expect(html).not.toHaveClass(/dark/);
+    await expect(page.locator("body")).toHaveCSS("background-color", "rgb(255, 255, 255)");
+
+    await page.reload();
+    await expect(html).toHaveClass(/light/);
+    await expect(page.locator("body")).toHaveCSS("background-color", "rgb(255, 255, 255)");
+
+    await page.getByRole("button", { name: "Dark mode" }).click();
+    await expect(html).toHaveClass(/dark/);
+    await expect(html).not.toHaveClass(/light/);
+  });
+
   test("search opens with the keyboard shortcut and jumps to an example", async ({ page }) => {
     await page.goto("/");
     await page.keyboard.press("Control+k");

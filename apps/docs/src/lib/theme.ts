@@ -7,6 +7,7 @@ export function useTheme() {
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
+    document.documentElement.classList.toggle("light", !dark);
     try {
       localStorage.setItem(KEY, dark ? "dark" : "light");
     } catch {
